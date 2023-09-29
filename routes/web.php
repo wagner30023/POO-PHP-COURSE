@@ -6,6 +6,8 @@ use App\Entities\NaturalPerson;
 use Illuminate\Support\Facades\Http;
 use App\Services\ViaCepService;
 use Illuminate\Support\Fluent;
+use App\Entities\Person;
+use App\Entities\Invoice;
 
 Route::get('/', function () {
     $tioJobs = new NaturalPerson("Tio Jobs", "121212121");
@@ -34,15 +36,23 @@ Route::get('/', function () {
 
     // dd(" Não é uma instancia Natural Person", $tioJobs);
 
-        // dd(ViaCepService::handleCep('72641132'));
+    // dd(ViaCepService::handleCep('72641132'));
 
-        // $data  = viaCepService::handleCep('72641132');
-        // dd($data['logradouro'], $data['uf']);
+    // $data  = viaCepService::handleCep('72641132');
+    // dd($data['logradouro'], $data['uf']);
 
-        $data = new Fluent(ViaCepService::handleCep('72641132'));
-        dd($data->logradouro, $data->uf, $data->bairro);
+    // $data = new Fluent(ViaCepService::handleCep('72641132'));
+    // dd($data->logradouro, $data->uf, $data->bairro);
 
-    });
+    // $tiojobs = new Person;
+    // $tioJobs->name  = 'Tio Jobs';
+    // dd($tiojobs->name);
+
+    $invoice = new Invoice;
+    $invoice->id = 1234;
+    $invoice->date = date('d/m/Y');
+    dd($invoice);
+});
 
 // function checkInstanceisNaturalPerson(NaturalPerson $naturalPerson):bool
 // {
