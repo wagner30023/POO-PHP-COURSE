@@ -20,4 +20,15 @@ class Invoice
     {
         $this->properties[$key] = $value;
     }
+
+    public function __isset(string $key): bool
+    {
+        // dd($key);
+        return array_key_exists($key,$this->properties);
+    }
+
+    public function unset(string $key):void
+    {
+        unset($this->properties[$key]);
+    }
 }

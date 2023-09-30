@@ -22,4 +22,6 @@ class Person
         $this->$name = $value;
         // dd($name, $value); 
     }
+
+
 }
